@@ -1,0 +1,10 @@
+project(PTA)
+
+set(CMAKE_CXX_STANDARD 11)
+add_executable(P-03-1 P-03-1.c)
+add_executable(P-03-2 P-03-2.c)
+add_executable(P-03-3 P-03-3.c)
+add_executable(P-04-1 P-04-1.c)
+add_executable(P-04-7 P-04-7.c)
+add_executable(P-04-5 P-04-5.c)
+add_executable(P-04-6 P-04-6.c)

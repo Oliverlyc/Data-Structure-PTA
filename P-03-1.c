@@ -1,6 +1,6 @@
 /*
-    Ê÷µÄÍ¬¹¹
-    Í¨¹ıÁ´±íµÄË¼ÏëÀ´½â¾öÎÊÌâ£¬Êµ¼ÊÍ¨¹ıÊı×éÀ´´æ´¢Êı¾İ½á¹¹
+    æ ‘çš„åŒæ„
+    é€šè¿‡é“¾è¡¨çš„æ€æƒ³æ¥è§£å†³é—®é¢˜ï¼Œå®é™…é€šè¿‡æ•°ç»„æ¥å­˜å‚¨æ•°æ®ç»“æ„
 */
 #include<stdio.h>
 #define MaxTree 15
@@ -17,20 +17,20 @@ Tree BuildTree(struct TreeNode T[])
 {
     int N, Root = -1, i; 
     ElementType cl,cr;
-    // printf("ÇëÊäÈë½áµã¸öÊı:\n");
-    scanf(" %d", &N);//¶ÁÈë½áµã¸öÊı
+    // printf("è¯·è¾“å…¥ç»“ç‚¹ä¸ªæ•°:\n");
+    scanf(" %d", &N);//è¯»å…¥ç»“ç‚¹ä¸ªæ•°
     int check[MaxTree];
     if(N){
         for(i = 0; i < N; i++){
             /* 
-            ÕâÀïÓÃÀ´ÅĞ¶Ï¸ù½áµã£¬³õÊ¼ÖµÎª0£¬±»Ö¸ÏòµÄ½áµãÎª1
+            è¿™é‡Œç”¨æ¥åˆ¤æ–­æ ¹ç»“ç‚¹ï¼Œåˆå§‹å€¼ä¸º0ï¼Œè¢«æŒ‡å‘çš„ç»“ç‚¹ä¸º1
             */
             check[i] = 0;
         }
         for(i = 0; i < N; i++){
-            // printf("ÇëÊäÈëµÚ%d¸ö¼ÓµãÊı¾İ\n", i);
+            // printf("è¯·è¾“å…¥ç¬¬%dä¸ªåŠ ç‚¹æ•°æ®\n", i);
             scanf(" %c %c %c",&T[i].Element, &cl, &cr);
-            // printf("ÄãÊäÈëµÄÊı¾İÎª %c %c %c \n",T[i].Element, cl, cr);
+            // printf("ä½ è¾“å…¥çš„æ•°æ®ä¸º %c %c %c \n",T[i].Element, cl, cr);
             if (cl != '-') {
                 T[i].Left = cl-'0';
                 check[T[i].Left] = 1;
@@ -53,14 +53,14 @@ Tree BuildTree(struct TreeNode T[])
 }
 int Ismorphic(Tree R1, Tree R2)
 {
-    //ÅĞ¶Ï¿ÕÊ÷
+    //åˆ¤æ–­ç©ºæ ‘
     if((R1 == Null)&& (R2 == Null)){
         return 1;
     }
     if(((R1 == Null)&&(R2 != Null)) || ((R1 != Null)&&(R2 == Null))){
         return 0;
     }
-    //ÅĞ¶Ï¸ù½áµãÊı¾İ
+    //åˆ¤æ–­æ ¹ç»“ç‚¹æ•°æ®
     if(T1[R1].Element != T2[R2].Element){
         return 0;
     }
@@ -75,7 +75,7 @@ int Ismorphic(Tree R1, Tree R2)
 }
 int main()
 {
-    Tree R1, R2;//½áµã
+    Tree R1, R2;//ç»“ç‚¹
     R1 = BuildTree(T1);
     R2 = BuildTree(T2);
     if(Ismorphic(R1, R2)){
